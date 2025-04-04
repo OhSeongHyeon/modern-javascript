@@ -1,0 +1,51 @@
+.cls_comm {
+    /* display: inline-block; 너비 최소화, 한 줄에 최대한 여러개 - 글자 느낌 */
+    display: inline-block;
+    font-size: 1.5rem;
+}
+#id_div1 {
+    background-color: cyan;
+    height: 100px;
+    width: 100px;
+}
+#id_section1 {
+    background-color: #9056ba;
+    height: 100px;
+    width: 100px;
+}
+#id_nav1 {
+    background-color: rgb(209, 193, 46);
+    height: 100px;
+    width: 100px;
+}
+
+.cls_comm2 {
+    /* display: block; 기본값, 너비 최대화, 한 줄을 무조건 혼자 씀. */
+    display: block;
+    font-size: 1.5rem;
+    /* id 와 class	같이 쓰면 id가 우선순위 */
+    background-color: black;
+}
+#id_div2 {
+    background-color: rgb(192, 70, 46);
+}
+#id_section2 {
+    background-color: rgb(39, 192, 84);
+}
+#id_nav2 {
+    background-color: rgb(37, 63, 192);
+}
+
+.cls_comm3 {
+    display: block;
+    font-size: 1.5rem;
+}
+#id_div3 {
+    background-color: rgb(192, 70, 46);
+}
+#id_section3 {
+    background-color: rgb(39, 192, 84);
+}
+#id_nav3 {
+    background-color: rgb(37, 63, 192);
+}
