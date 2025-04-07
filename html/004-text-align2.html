@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div, section, nav {
+            border: 10px dotted red;
+            margin: 50px;
+            padding: 20px;
+        }
+
+        section {
+            text-align: center;
+        }
+        nav {
+            text-align: right;
+        }
+        a {
+            background-color: gold;
+        }
+
+        div a {
+            text-align: center;
+        }
+
+        /* section 안에 있는 모든 article 요소에 적용 */
+        section article {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="http://www.naver.com" target="_blank">네이버로 이동</a>
+    </div>
+
+    <section>
+        <a href="http://www.google.com" target="_blank">구글로 이동</a>
+        <a href="http://www.google.com" target="_blank">구글로 이동</a>
+        <article></article>
+    </section>
+
+    <nav>
+        <a href="http://www.daum.net" target="_blank">다음으로 이동</a>
+    </nav>
+</body>
+
+</html>

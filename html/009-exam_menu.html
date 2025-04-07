@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #logo {
+            display: block;
+            color: black;
+            font-size: 4.5rem;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: -6px;
+        }
+
+        #menu-bar {
+            text-align: center;
+            margin-top: 2%;
+        }
+
+        nav div {
+            display: inline-block;
+            font-weight: bold;
+            width: 5%;
+        }
+
+        section {
+            /*font-weight: inherit;*/
+            display: inline-block;
+            width: 1%;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: smaller;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="logo" style="cursor: pointer;" onclick="f_ev(this)"><a href="">LOGO</a></div>
+    <nav id="menu-bar">
+        <section>|</section>
+        <div><a href="#">BRAND</a></div>
+        <section>|</section>
+        <div><a href="#">VISUAL</a></div>
+        <section>|</section>
+        <div><a href="#">STYLE</a></div>
+        <section>|</section>
+        <div><a href="#">MEDIA</a></div>
+        <section>|</section>
+        <div><a href="#">NEWS</a></div>
+        <section>|</section>
+        <div><a href="#">STORE</a></div>
+        <section>|</section>
+        <div><a href="#">CUSTOMER</a></div>
+        <section>|</section>
+    </nav>
+
+    <script type="text/javascript">
+        function f_ev(event) {
+            console.log("ㅇㅇ");
+        }
+    </script>
+</body>
+
+</html>

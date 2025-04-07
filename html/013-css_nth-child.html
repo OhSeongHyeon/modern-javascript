@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1st, 2nd, 3rd, 4th <- 4부터 th 붙어서 nth 라고 부름
+        section > div:nth-child(2) { 앞쪽에 태그 언급하면 이 놈이 있어야됨
+            background-color: gold;
+        }
+        section > :nth-child(2) {
+            background-color: gold;
+        }
+        section > :nth-child(2n) { 배수 지정 가능
+            background-color: gold;
+        }
+        */
+        /*
+        section > div {
+            width: 15%;
+            height: 100px;
+            background-color: maroon;
+            display: inline-block;
+        }
+        */
+        section {
+            text-align: center;
+        }
+
+        section>div {
+            width: 13%;
+            background-color: red;
+            height: 100px;
+            display: inline-block;
+        }
+
+        section>div:nth-child(7n + 2) {
+            background-color: orange;
+        }
+
+        section>div:nth-child(7n + 3) {
+            background-color: yellow;
+        }
+
+        section>div:nth-child(7n + 4) {
+            background-color: green;
+        }
+
+        section>div:nth-child(7n + 5) {
+            background-color: blue;
+        }
+
+        section>div:nth-child(7n + 6) {
+            background-color: navy;
+        }
+
+        section>div:nth-child(7n + 7) {
+            background-color: purple;
+        }
+
+        /* 마우스 올렸을 경우, 색상을 좌우반전 */
+        section:hover>div:nth-child(7n + 1) {
+            background-color: purple;
+        }
+
+        section:hover>div:nth-child(7n + 2) {
+            background-color: navy;
+        }
+
+        section:hover>div:nth-child(7n + 3) {
+            background-color: blue;
+        }
+
+        section:hover>div:nth-child(7n + 4) {
+            background-color: green;
+        }
+
+        section:hover>div:nth-child(7n + 5) {
+            background-color: yellow;
+        }
+
+        section:hover>div:nth-child(7n + 6) {
+            background-color: orange;
+        }
+
+        section:hover>div:nth-child(7n + 7) {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section> -->
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+셀렉터                    설명                예시
+*                       전체 선택            * { margin: 0; }
+태그                    태그 이름으로 선택    p {}
+클래스                  .로 시작            .box {}
+아이디                  #로 시작            #header {}
+후손                    A B                 div span {}
+자식                    A > B               ul > li {}
+형제 (바로 뒤)          A + B               h1 + p {}
+형제 (뒤에 있는 모두)   A ~ B               h1 ~ p {}
+속성                   [type="text"]       input[type="text"] {}
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서 제목</title>
+    <!-- css -->
+    <style>
+        /* 직계 자식 요소에만 적용 */
+        div>a {
+            font-size: 3rem;
+            color: black;
+        }
+
+        nav a {
+            font-size: 5rem;
+            color: red;
+        }
+
+        /* section 안에 있는 모든 a 요소에 적용 */
+        section a {
+            font-size: 7rem;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    에멧 Emmet
+    <br>
+    div>a[href=#]{네이버}
+    <div><a href="#">네이버</a></div>
+    <br>
+    <!-- 이 div는 a의 부모 엘리먼트 이다. -->
+    <div>
+        <!-- 이 a는 div의 자식 엘리먼트 이다. -->
+        <a href="#">네이버</a>
+    </div>
+    <section>
+        <a href="#">구글</a>
+    </section>
+    <br>
+    <div><a href="#">네이버</a></div>
+    <nav><a href="#">구글</a></nav>
+    <section><a href="#">다음</a></section>
+
+    <!-- js -->
+    <script>
+
+    </script>
+</body>
+
+</html>
