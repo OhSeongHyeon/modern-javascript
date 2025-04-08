@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        /* 메뉴 박스 */
+        nav {
+            text-align: center;
+        }
+
+        /* 메뉴 */
+        nav>section {
+            background-color: #afafaf;
+            display: inline-block;
+            padding: 0 20px;
+            border-radius: 10px;
+        }
+
+        /* 메뉴 아이템 */
+        nav>section>div {
+            display: inline-block;
+        }
+
+        /* 메뉴 아이템 텍스트 */
+        nav>section>div>a {
+            padding: 20px;
+            display: block;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+
+        /* 호버된 메뉴 아이템의 텍스트 */
+        nav>section>div:hover>a {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <section>
+            <div><a href="#">아이템 1</a></div>
+            <div><a href="#">아이템 2</a></div>
+            <div><a href="#">아이템 3</a></div>
+            <div><a href="#">아이템 4</a></div>
+        </section>
+    </nav>
+</body>
+
+</html>

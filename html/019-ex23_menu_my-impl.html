@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c_section {
+            text-align: center;
+        }
+        .c_nav {
+            display: inline-block;
+            text-align: center;
+            background-color: lightgray;
+            border-radius: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .c_div {
+            display: inline-block;
+            font-weight: bold;
+            height: 40px;
+            width: 90px;
+            text-align: center;
+            padding-top: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .c_div:hover {
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Emmet: section>nav>div*4{아이템$} -->
+    <section class="c_section">
+        <nav class="c_nav">
+            <div class="c_div">아이템1</div>
+            <div class="c_div">아이템2</div>
+            <div class="c_div">아이템3</div>
+            <div class="c_div">아이템4</div>
+        </nav>
+    </section>
+    <script>
+        document.querySelectorAll(".c_div")
+            .forEach((target) => {
+                target.addEventListener("click", (event) => {
+                    location.href = "#";
+                    console.log("click");
+                    location.reload(true);
+                });
+            });
+    </script>
+</body>
+</html>

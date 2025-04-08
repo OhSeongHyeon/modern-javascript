@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        section {
+            text-align: center;
+        }
+
+        nav {
+            background-color: gray;
+            display: inline-block;
+            padding: 0 20px;
+            border-radius: 10px;
+        }
+
+        div {
+            display: inline-block;
+        }
+
+        div>a {
+            color: black;
+            padding: 20px;
+            display: block;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+
+        div>a:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<!-- <body style="margin: 0;"> -->
+
+<body>
+    <!-- Emmet
+        section>nav>div*4>a[href="#"]{메뉴 아이템 $}
+    -->
+    <section>
+        <nav>
+            <div><a href="#">메뉴 아이템 1</a></div>
+            <div><a href="#">메뉴 아이템 2</a></div>
+            <div><a href="#">메뉴 아이템 3</a></div>
+            <div><a href="#">메뉴 아이템 4</a></div>
+        </nav>
+    </section>
+</body>
+
+</html>

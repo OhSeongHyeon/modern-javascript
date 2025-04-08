@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 4rem;
+        }
+
+        /* tag 가 a 인 엘리먼트 선택 */
+        a {
+            color: black;
+        }
+
+        /* class 가 a 인 엘리먼트 선택 */
+        .a {
+            color: red;
+        }
+
+        /* id가 a 인 엘리먼트 선택 */
+        #a {
+            color: blue;
+        }
+
+        /* class a와 b를 동시에 가지고 있는 엘리먼트 선택 */
+        .a.b {
+            color: gold;
+        }
+
+        /* 태그가 section이고 class a와 b를 동시에 가지고 있는 엘리먼트 선택 */
+        section.a.b {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">1</div>
+    <div id="a">2</div>
+    <div class="a">3</div>
+    <div class="a b">4</div>
+    <section class="a b">4</section>
+</body>
+
+</html>
