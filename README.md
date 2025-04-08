@@ -29,5 +29,3 @@ c:/xampp/htdocs/index.php 파일
 웹 브라우저 접속시
 
 http://localhost 입력
-
-부트스트랩 node.js 설치  npm i bootstrap@v5.3.3
