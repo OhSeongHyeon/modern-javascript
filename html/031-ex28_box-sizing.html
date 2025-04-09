@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-1 {
+            width: 100px;
+            height: 100px;
+            margin-top: 100px;
+            background-color: red;
+        }
+
+        .box-1-1 {
+            border: 10px solid blue;
+            padding: 10px;
+        }
+
+        /* box-sizing: border-box */
+        .box-1-2 {
+            border: 10px solid gold;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-1 box-1-1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+    <div class="box-1 box-1-2">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+</body>
+
+</html>

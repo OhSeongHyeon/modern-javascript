@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*그리드로 계단식 비율 예제*/
+        body {
+            margin: 0;
+        }
+
+        .inline-grid {
+            font-size: 0;
+        }
+
+        .inline-grid>* {
+            display: inline-block;
+            font-size: 1rem;
+            vertical-align: top;
+        }
+
+        .bg-red {
+            background-color: red;
+        }
+
+        .bg-blue {
+            background-color: blue;
+        }
+
+        .bg-green {
+            background-color: green;
+        }
+
+        .bg-gold {
+            background-color: gold;
+        }
+
+        .width-1-5 {
+            width: calc(100% / 5);
+        }
+
+        .width-2-5 {
+            width: calc(100% / 5 * 2);
+        }
+
+        .width-3-5 {
+            width: calc(100% / 5 * 3);
+        }
+
+        .width-4-5 {
+            width: calc(100% / 5 * 4);
+        }
+
+        .box-1 {
+            background-color: black;
+            height: 100vh;
+        }
+
+        .box-1>div {
+            height: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="box-1 inline-grid">
+        <div class="bg-red width-1-5"></div>
+        <div class="bg-blue width-4-5"></div>
+        <div class="bg-green width-2-5"></div>
+        <div class="bg-gold width-3-5"></div>
+    </section>
+</body>
+
+</html>

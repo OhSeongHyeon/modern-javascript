@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 컨테이너로 레이아웃을 중앙에 모으고 너비 고정시키기 */
+        body {
+            margin: 0;
+        }
+
+        .inline-grid {
+            font-size: 0;
+        }
+
+        .inline-grid>* {
+            font-size: 1rem;
+            display: inline-block;
+            vertical-align: top;
+            box-sizing: border-box;
+        }
+
+        section>div {
+            width: calc(100% / 7);
+            height: 20px;
+            display: inline-block;
+            border: 0 solid black;
+            border-width: 0 1px;
+        }
+
+        section>div:first-child {
+            border-width: 0 1px 0 2px;
+        }
+
+        section>div:last-child {
+            border-width: 0 2px 0 1px;
+        }
+
+        .con-1 {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #afafaf;
+            height: 100vh;
+        }
+
+        .img-box>img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con-1">
+        <section class="inline-grid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+
+    </div>
+</body>
+
+</html>

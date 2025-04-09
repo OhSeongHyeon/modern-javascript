@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        section>div 에 display: inline-block; 추가
+        section>div 에 vertical-align: top; 추가
+        section 에 font-size: 0; 추가
+        변화를 느껴봐
+        */
+        section {
+            width: 200px;
+            height: 200px;
+            border: 10px solid red;
+            font-size: 0;
+        }
+
+        section>div {
+            width: 50%;
+            height: 50%;
+            background-color: black;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        section>div:nth-child(2) {
+            background-color: green;
+        }
+
+        section>div:nth-child(3) {
+            background-color: pink;
+        }
+
+        section>div:nth-child(4) {
+            background-color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- display: inline-block; 일때
+    세글자 (줄바꿈 공백도 하나)
+    <section>
+        <div></div>
+        <div></div>
+    </section>
+    두글자 (좋은 해결법 아님!!)
+    <section>
+        <div></div><div></div>
+    </section>
+    엘리먼트를 텍스트 취급하는 inline-block은 정교한 디자인 불가능
+    글자의 행간과 자간이 존재하기 때문
+    해결법 font-size: 0, vertical-align: top
+    다른곳에 font-size: 1rem 적용까지 해야 div 텍스트가 보임
+    -->
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .inline-grid {
+            font-size: 0;
+        }
+
+        .inline-grid>* {
+            vertical-align: top;
+            font-size: 1rem;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        section {
+            border: 10px solid red;
+            height: 500px;
+        }
+
+        section>div {
+            width: calc(100% / 7);
+            height: 50%;
+            display: inline-block;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        section>div:nth-child(2n) {
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="inline-grid">
+        <div>텍스트</div>
+        <div>텍스트</div>
+        <div>텍스트</div>
+        <div>텍스트</div>
+        <div>텍스트</div>
+        <div>텍스트</div>
+        <div>텍스트</div>
+        <div>텍스트</div>
+        <div>텍스트</div>
+        <div>텍스트</div>
+        <div>텍스트</div>
+        <div>텍스트</div>
+        <div>텍스트</div>
+        <div>텍스트</div>
+    </section>
+</body>
+
+</html>
