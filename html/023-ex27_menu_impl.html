@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            padding: top right bottom left;
+            padding: 25px 50px 75px 100px;
+        */
+        /* 노말라이즈 => 모든 작업 전에 한번 */
+        /* ul, li 노말라이즈 */
+        ul,
+        li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* a를 노말라이즈 합니다. */
+        /* 이렇게 하면 나중에 문제가 됩니다. */
+        /* inherit => 나는 개성이 없어요. => 나는 부모의 속성을 그대로 물려받겠습니다. */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .c_menu-1 {
+            text-align: center;
+        }
+
+        .c_menu-1>ul {
+            background-color: #dfdfdf;
+            display: inline-block;
+            /* 좌우, 위아래 */
+            padding: 0 10px;
+            border-radius: 5px;
+        }
+
+        .c_menu-1>ul>li {
+            display: inline-block;
+            width: 200px;
+        }
+
+        .c_menu-1>ul>li>a {
+            padding: 10px;
+            display: block;
+        }
+
+        .c_menu-1>ul>li:hover>a {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body style="color: black;">
+    <nav class="c_menu-1">
+        <ul>
+            <li><a href="#">메뉴아이템1</a></li>
+            <li><a href="#">메뉴아이템2</a></li>
+            <li><a href="#">메뉴아이템3</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>

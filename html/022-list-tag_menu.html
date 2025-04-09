@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 바디 노말라이즈 */
+        body {
+            margin: 0;
+        }
+
+        /* ul, li 노말라이즈 */
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* a 노말라이즈 */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* 커스텀 */
+        /* 타이틀 */
+        .title {
+            text-align: center;
+        }
+
+        /* 메뉴 박스 */
+        .menu-box {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* 메뉴 */
+        .menu-box>.menu {
+            display: inline-block;
+            padding: 0 10px;
+            background-color: #dfdfdf;
+            border-radius: 10px;
+        }
+
+        /* 메뉴 아이템 */
+        .menu-box>.menu>.menu-item {
+            display: inline-block;
+        }
+
+        /* 메뉴 아이템 텍스트 */
+        .menu-box>.menu>.menu-item>.text {
+            padding: 10px;
+            cursor: pointer;
+            display: block;
+        }
+
+        /* 마우스로 선택된 메뉴 아이템의 텍스트 */
+        .menu-box>.menu>.menu-item:hover>.text {
+            color: white;
+            background-color: black;
+        }
+
+        /* 메뉴 박스 2 */
+        .menu-box-2 {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* 메뉴 */
+        .menu-box-2>ul {
+            display: inline-block;
+            padding: 0 10px;
+            background-color: #dfdfdf;
+            border-radius: 10px;
+        }
+
+        /* 메뉴 아이템 */
+        .menu-box-2>ul>li {
+            display: inline-block;
+        }
+
+        /* 메뉴 아이템 텍스트 */
+        .menu-box-2>ul>li>a {
+            padding: 10px;
+            cursor: pointer;
+            display: block;
+        }
+
+        /* 마우스로 선택된 메뉴 아이템의 텍스트 */
+        .menu-box-2>ul>li:hover>a {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div.menu-box>div.menu>div.menu-item*4>div.text{메뉴 아이템 $} -->
+    <!-- .menu-box>.menu>.menu-item*4>.menu-item-text{메뉴 아이템 $} -->
+    <!-- nav>section>div*4>a[href=#]{메뉴 아이템 $} -->
+    <!-- 메뉴박스>메뉴>메뉴아이템*4>메뉴아이템텍스트 -->
+
+    <!-- v1 -->
+    <h1 class="title">menu-box(v1)</h1>
+    <div class="menu-box">
+        <div class="menu">
+            <div class="menu-item">
+                <div class="text">메뉴 아이템 1</div>
+            </div>
+            <div class="menu-item">
+                <div class="text">메뉴 아이템 2</div>
+            </div>
+            <div class="menu-item">
+                <div class="text">메뉴 아이템 3</div>
+            </div>
+            <div class="menu-item">
+                <div class="text">메뉴 아이템 4</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- v2 -->
+    <h1 class="title">menu-box(v2)</h1>
+    <nav class="menu-box">
+        <div class="menu">
+            <div class="menu-item">
+                <div class="text">메뉴 아이템 1</div>
+            </div>
+            <div class="menu-item">
+                <div class="text">메뉴 아이템 2</div>
+            </div>
+            <div class="menu-item">
+                <div class="text">메뉴 아이템 3</div>
+            </div>
+            <div class="menu-item">
+                <div class="text">메뉴 아이템 4</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- v3 -->
+    <h1 class="title">menu-box(v3)</h1>
+    <nav class="menu-box">
+        <ul class="menu">
+            <li class="menu-item">
+                <div class="text">메뉴 아이템 1</div>
+            </li>
+            <li class="menu-item">
+                <div class="text">메뉴 아이템 2</div>
+            </li>
+            <li class="menu-item">
+                <div class="text">메뉴 아이템 3</div>
+            </li>
+            <li class="menu-item">
+                <div class="text">메뉴 아이템 4</div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- v4 -->
+    <h1 class="title">menu-box(v4)</h1>
+    <nav class="menu-box">
+        <ul class="menu">
+            <li class="menu-item">
+                <a href="#" class="text">메뉴 아이템 1</a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="text">메뉴 아이템 2</a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="text">메뉴 아이템 3</a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="text">메뉴 아이템 4</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 최종 -->
+    <h1 class="title">menu-box-2(최종, 쓸떼없이 클래스를 많이 사용할 필요가 없다.)</h1>
+    <!--
+    nav.menu-box-2[tab 키]
+    nav.menu-box-2>ul[tab 키]
+    nav.menu-box-2>ul>li*4[tab 키]
+    nav.menu-box-2>ul>li*4>a[href="#"][tab 키]
+    nav.menu-box-2>ul>li*4>a[href="#"]{메뉴 아이템 $}[tab 키]
+    -->
+    <nav class="menu-box-2">
+        <ul>
+            <li>
+                <a href="#">메뉴 아이템 1</a>
+            </li>
+            <li>
+                <a href="#">메뉴 아이템 2</a>
+            </li>
+            <li>
+                <a href="#">메뉴 아이템 3</a>
+            </li>
+            <li>
+                <a href="#">메뉴 아이템 4</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

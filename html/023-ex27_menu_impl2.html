@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ul, li tag 노말라이즈 */
+        ul,li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* a tag 노말라이즈 */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /*
+        .c_section-1, .c_section-2, .c_section-3 {
+            padding-top: 50px;
+        }
+        .c_section-1 {
+            color: black;
+        }
+        .c_section-2 {
+            color: red;
+        }
+        .c_section-3 {
+            color: orange;
+        }
+        */
+
+        .c_menu-1, .c_menu-2, .c_menu-3 {
+            padding-top: 50px;
+        }
+        .c_menu-1 {
+            text-align: center;
+        }
+        .c_menu-2 {
+            color: red;
+        }
+        .c_menu-3 {
+            color: orange;
+        }
+
+        .c_menu-1>ul {
+            background-color: #dfdfdf;
+            display: inline-block;
+            padding: 0 10px;
+            border-radius: 5px;
+        }
+
+        .c_menu-1>ul>li {
+            display: inline-block;
+            width: 200px;
+        }
+
+        .c_menu-1>ul>li>a {
+            padding: 10px;
+            display: block;
+        }
+
+        .c_menu-1>ul>li:hover>a {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- nav[class="c_menu-$"]>ul>li*3>a[href="#"]{메뉴 아이템 $} -->
+    <!-- section[class="c_section-$"]*3>nav[class="c_menu-1"]>ul>li*4>a[href="#"]{메뉴 아이템 $} -->
+    <!--
+    <section class="c_section-1">
+        <nav class="c_menu-1">
+            <ul>
+                <li><a href="#">메뉴 아이템 1</a></li>
+                <li><a href="#">메뉴 아이템 2</a></li>
+                <li><a href="#">메뉴 아이템 3</a></li>
+                <li><a href="#">메뉴 아이템 4</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section class="c_section-2">
+        <nav class="c_menu-1">
+            <ul>
+                <li><a href="#">메뉴 아이템 1</a></li>
+                <li><a href="#">메뉴 아이템 2</a></li>
+                <li><a href="#">메뉴 아이템 3</a></li>
+                <li><a href="#">메뉴 아이템 4</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section class="c_section-3">
+        <nav class="c_menu-1">
+            <ul>
+                <li><a href="#">메뉴 아이템 1</a></li>
+                <li><a href="#">메뉴 아이템 2</a></li>
+                <li><a href="#">메뉴 아이템 3</a></li>
+                <li><a href="#">메뉴 아이템 4</a></li>
+            </ul>
+        </nav>
+    </section>
+    -->
+
+    <!-- nav[class="c_menu-1"]>ul>li*4>a[href="#"]{메뉴 아이템 $} -->
+    <nav class="c_menu-1">
+        <ul>
+            <li><a href="#">메뉴 아이템 1</a></li>
+            <li><a href="#">메뉴 아이템 2</a></li>
+            <li><a href="#">메뉴 아이템 3</a></li>
+            <li><a href="#">메뉴 아이템 4</a></li>
+        </ul>
+    </nav>
+    <nav class="c_menu-1 c_menu-2">
+        <ul>
+            <li><a href="#">메뉴 아이템 1</a></li>
+            <li><a href="#">메뉴 아이템 2</a></li>
+            <li><a href="#">메뉴 아이템 3</a></li>
+            <li><a href="#">메뉴 아이템 4</a></li>
+        </ul>
+    </nav>
+    <nav class="c_menu-1 c_menu-3">
+        <ul>
+            <li><a href="#">메뉴 아이템 1</a></li>
+            <li><a href="#">메뉴 아이템 2</a></li>
+            <li><a href="#">메뉴 아이템 3</a></li>
+            <li><a href="#">메뉴 아이템 4</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>
