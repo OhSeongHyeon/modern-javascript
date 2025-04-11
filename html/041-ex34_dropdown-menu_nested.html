@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 노말라이즈 시작 */
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* 노말라이즈 끝 */
+
+        /* 메뉴박스 */
+        .menu-box-1 {
+            text-align: center;
+        }
+
+        /* 메뉴 */
+        .menu-box-1 ul {
+            background-color: #afafaf;
+        }
+
+        /* 1차 메뉴 */
+        .menu-box-1>ul {
+            display: inline-block;
+            padding: 0 20px;
+            border-radius: 10px;
+        }
+
+        /* 메뉴 아이템 */
+        .menu-box-1 ul>li {
+            position: relative;
+        }
+
+        /* 1차 메뉴 아이템 */
+        .menu-box-1>ul>li {
+            display: inline-block;
+        }
+
+        /* 메뉴 아이템 텍스트 */
+        .menu-box-1 ul>li>a {
+            padding: 10px;
+            display: block;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* 호버된 메뉴 아이템의 텍스트 */
+        .menu-box-1 ul>li:hover>a {
+            background-color: black;
+            color: white;
+        }
+
+        /* 서브 메뉴 */
+        .menu-box-1>ul ul {
+            position: absolute;
+            display: none;
+            top: 100%;
+            left: 0;
+        }
+
+        /* 1차, 2차 제외한 서브 메뉴(즉 3차, 4차, ..) */
+        .menu-box-1>ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+
+        /* 호버된 메뉴 아이템의 자식 메뉴 */
+        .menu-box-1 ul>li:hover>ul {
+            display: block;
+        }
+
+        /* 마지막 1차메뉴아이템에 속한 3차메뉴 */
+        .menu-box-1>ul>li:last-child>ul ul {
+            left: auto;
+            right: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+    nav.menu-box-1>ul>li*3>a[href="#"]{1차 메뉴 아이템 $}+ul>li*3>a[href="#"]{2차 메뉴 아이템 $}+ul>li*3>a[href="#"]{3차 메뉴 아이템 $}
+    -->
+
+    <nav class="menu-box-1">
+        <ul>
+            <li>
+                <a href="#">1차 메뉴 아이템 1</a>
+                <ul>
+                    <li>
+                        <a href="#">2차 메뉴 아이템 1</a>
+                        <ul>
+                            <li><a href="#">3차 메뉴 아이템 1</a></li>
+                            <li><a href="#">3차 메뉴 아이템 2</a></li>
+                            <li><a href="#">3차 메뉴 아이템 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">2차 메뉴 아이템 2</a>
+                        <ul>
+                            <li><a href="#">3차 메뉴 아이템 1</a></li>
+                            <li><a href="#">3차 메뉴 아이템 2</a></li>
+                            <li><a href="#">3차 메뉴 아이템 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">2차 메뉴 아이템 3</a>
+                        <ul>
+                            <li><a href="#">3차 메뉴 아이템 1</a></li>
+                            <li><a href="#">3차 메뉴 아이템 2</a></li>
+                            <li><a href="#">3차 메뉴 아이템 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">1차 메뉴 아이템 2</a>
+                <ul>
+                    <li>
+                        <a href="#">2차 메뉴 아이템 1</a>
+                        <ul>
+                            <li><a href="#">3차 메뉴 아이템 1</a></li>
+                            <li><a href="#">3차 메뉴 아이템 2</a></li>
+                            <li><a href="#">3차 메뉴 아이템 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">2차 메뉴 아이템 2</a>
+                        <ul>
+                            <li><a href="#">3차 메뉴 아이템 1</a></li>
+                            <li><a href="#">3차 메뉴 아이템 2</a></li>
+                            <li><a href="#">3차 메뉴 아이템 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">2차 메뉴 아이템 3</a>
+                        <ul>
+                            <li><a href="#">3차 메뉴 아이템 1</a></li>
+                            <li><a href="#">3차 메뉴 아이템 2</a></li>
+                            <li><a href="#">3차 메뉴 아이템 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">1차 메뉴 아이템 3</a>
+                <ul>
+                    <li>
+                        <a href="#">2차 메뉴 아이템 1</a>
+                        <ul>
+                            <li><a href="#">3차 메뉴 아이템 1</a></li>
+                            <li><a href="#">3차 메뉴 아이템 2</a></li>
+                            <li><a href="#">3차 메뉴 아이템 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">2차 메뉴 아이템 2</a>
+                        <ul>
+                            <li><a href="#">3차 메뉴 아이템 1</a></li>
+                            <li><a href="#">3차 메뉴 아이템 2</a></li>
+                            <li><a href="#">3차 메뉴 아이템 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">2차 메뉴 아이템 3</a>
+                        <ul>
+                            <li><a href="#">3차 메뉴 아이템 1</a></li>
+                            <li><a href="#">3차 메뉴 아이템 2</a></li>
+                            <li><a href="#">3차 메뉴 아이템 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>

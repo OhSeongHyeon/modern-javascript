@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            padding: 10px;
+            font-size: 2rem;
+            width: 1000px;
+            margin: 0 auto;
+            background-color: red;
+            /* 절대 줄바꿈 금지 */
+            white-space: nowrap;
+        }
+        div {
+            padding:10px;
+            font-size:2rem;
+            width:1000px;
+            margin:0 auto;
+            background-color:red;
+            white-space:nowrap;
+            
+            /* 가로방향으로 넘치는 부분을 그냥 보여줌(기본값) */
+            overflow-x:visible;
+            
+            /* 가로방향으로 넘치는 부분을 그냥 숨김 */
+            overflow-x:hidden;
+            
+            /* 가로방향으로 스크롤바를 무조건 생성(넘치치 않아도 생성) */
+            overflow-x:scroll;
+            
+            /* 가로방향으로 스크롤바를 무조건 생성(넘치치 않으면 스크롤바가 안생김) */
+            overflow-x:auto;
+          }
+    </style>
+</head>
+
+<body>
+    <div>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate veniam cum, corrupti praesentium sit, atque
+        ad optio inventore omnis quod nostrum amet eveniet? Assumenda labore accusamus soluta adipisci, aliquam veniam?
+    </div>
+</body>
+
+</html>

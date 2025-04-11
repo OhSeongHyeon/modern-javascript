@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 노말라이즈 시작 */
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* 노말라이즈 끝 */
+
+        /* 메뉴박스 */
+        .menu-box-1 {
+            text-align: center;
+        }
+
+        /* 메뉴 */
+        .menu-box-1 ul {
+            background-color: #afafaf;
+        }
+
+        /* 1차 메뉴 */
+        .menu-box-1>ul {
+            display: inline-block;
+            padding: 0 20px;
+            border-radius: 10px;
+        }
+
+        /* 1차 메뉴 아이템 */
+        .menu-box-1>ul>li {
+            display: inline-block;
+            position: relative;
+        }
+
+        /* 메뉴 아이템 텍스트 */
+        .menu-box-1 ul>li>a {
+            padding: 10px;
+            display: block;
+            font-weight: bold;
+        }
+
+        /* 호버된 메뉴 아이템의 텍스트 */
+        .menu-box-1 ul>li:hover>a {
+            background-color: black;
+            color: white;
+        }
+
+        /* 2차 메뉴 */
+        .menu-box-1>ul>li>ul {
+            position: absolute;
+            display: none;
+            top: 100%;
+            left: 0;
+        }
+
+        /* 호버된 1차 메뉴 아이템의 자식 메뉴 */
+        .menu-box-1>ul>li:hover>ul {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+- [x] 작업 1, 1차 메뉴 마크업
+- [x] 작업 2, 노말라이즈
+- [x] 작업 3, 1차 메뉴 완성
+- [x] 작업 4, 2차 메뉴 마크업
+- [x] 작업 5, 2차 메뉴를 평소에 숨기기
+- [x] 작업 6, 2차 메뉴를 유령화
+- [x] 작업 7, 1차 메뉴 아이템을 유령의 집화
+- [x] 작업 8, 2차 메뉴 아이템 텍스트도 꾸미기
+- [x] 작업 9, 2차 메뉴에 배경색
+- [x] 작업 10, 모든 메뉴에 배경색을 한방에
+-->
+    <!--
+nav.menu-box-1>ul>li*3>a[href="#"]{1차 메뉴 아이템 $}+ul>li*3>a[href="#"]{2차 메뉴 아이템 $}
+-->
+
+    <nav class="menu-box-1">
+        <ul>
+            <li>
+                <a href="#">1차 메뉴 아이템 1</a>
+                <ul>
+                    <li><a href="#">2차 메뉴 아이템 1</a></li>
+                    <li><a href="#">2차 메뉴 아이템 2</a></li>
+                    <li><a href="#">2차 메뉴 아이템 3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">1차 메뉴 아이템 2</a>
+                <ul>
+                    <li><a href="#">2차 메뉴 아이템 1</a></li>
+                    <li><a href="#">2차 메뉴 아이템 2</a></li>
+                    <li><a href="#">2차 메뉴 아이템 3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">1차 메뉴 아이템 3</a>
+                <ul>
+                    <li><a href="#">2차 메뉴 아이템 1</a></li>
+                    <li><a href="#">2차 메뉴 아이템 2</a></li>
+                    <li><a href="#">2차 메뉴 아이템 3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+</html>
