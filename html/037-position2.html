@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section>div {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            border: 1px solid yellow;
+        }
+
+        /* section 의 자식인 div 이면서 1번째 자식인 엘리먼트 */
+        /* `section>div:first-child` 와 `section>div:nth-child(1)` 는 같은 뜻 입니다. */
+        section>div:first-child {
+            /* y 좌표 */
+            top: 0%;
+            /* x 좌표 */
+            left: 0%;
+            background-color: black;
+        }
+        /* section 의 자식인 div 이면서 2번째 자식인 엘리먼트 */
+        section>div:nth-child(2) {
+            top: 50%;
+            left: 0%;
+            background-color: lightblue;
+        }
+        /* section 의 자식인 div 이면서 뒤에서 2번째 자식인 엘리먼트 */
+        section>div:nth-child(3) {
+            top: 50%;
+            left: 50%;
+            background-color: lightcoral;
+        }
+        /* section 의 자식인 div 이면서 뒤에서 1번째 자식인 엘리먼트 */
+        /* `section>div:last-child` 와 `section>div:nth-last-child(1)` 는 같은 뜻 입니다. */
+        section>div:last-child {
+            top: 0%;
+            left: 50%;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+
+</html>

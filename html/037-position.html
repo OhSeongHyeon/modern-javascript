@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        position 속성 정리
+        종류        absolute, fixed               relative                       static
+        너비        최대한 줄어든다.               그대로 유지                   그대로 유지
+        본질        유령화, 유령의집화(유령가두기)  유령의집화(유령가두기)         사람화
+        겹침허용    겹치는게 가능                  겹치는거 불가능               겹치는거 불가능
+        이동        top, left, right, bottom      top, left, right, bottom      -
+                    으로 이동, 기준이 부모유령     으로 이동, 기준이 현재위
+        */
+        section {
+            margin-top: 500px;
+            width: 200px;
+            height: 200px;
+            border: 10px solid red;
+        }
+
+        section>div {
+            width: 20%;
+            height: 40%;
+            background-color: blue;
+            position: absolute;
+        }
+
+        section>div:nth-child(1) {
+            top: 10%;
+            left: 50%;
+        }
+
+        section>div:nth-child(2) {
+            background-color: gold;
+            top: 40%;
+            left: 40%;
+        }
+
+        section>div:nth-child(3) {
+            background-color: pink;
+            top: 30%;
+            left: 30%;
+        }
+
+        section>div:nth-child(4) {
+            background-color: green;
+            top: 20%;
+            left: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+
+</html>

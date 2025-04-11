@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ex32 수직수평중앙유령 */
+        section {
+            width: 200px;
+            height: 200px;
+            border: 10px solid red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        section>div {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+        }
+
+        section>div:nth-child(1) {
+            top: 0;
+            left: 0;
+            background-color: black;
+        }
+
+        section>div:nth-child(2) {
+            top: 0;
+            right: 0;
+            background-color: gold;
+        }
+
+        section>div:nth-child(3) {
+            bottom: 0;
+            left: 0;
+            background-color: blue;
+        }
+
+        section>div:nth-child(4) {
+            bottom: 0;
+            right: 0;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+    - [x] 작업 1, 4등분
+    - [x] 작업 2, 4등분한 유령들을 부모 엘리먼트에 가두기, relative
+    - [x] 작업 3, 부모 엘리먼트(section)을 수평중앙정렬
+    - [x] 작업 4, 부모 엘리먼트(section)을 중앙정렬, absolute
+    - [x] 작업 5, 부모 엘리먼트(section)을 중앙정렬, 세부조정, calc
+    - [x] 작업 6, 부모 엘리먼트(section)을 중앙정렬, 세부조정, transform
+    -->
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</body>
+
+</html>

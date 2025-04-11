@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c_sec {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: lightgreen;
+        }
+        .c_div {
+            position: absolute;
+            background-color: lightcoral;
+            width: 30%;
+            height: 30%;
+            top: auto;
+            left: 30%;
+            right: auto;
+            bottom: auto;
+            z-index: 1;
+        }
+
+        .c_div2 {
+            background-color: red;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            z-index: 2;
+        }
+
+        .c_section2 {
+            background-color: gold;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c_div2"></div>
+    <section class="c_section2"></section>
+    <!-- --- -->
+    <section class="c_sec">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur voluptate sapiente molestias doloremque,
+        reprehenderit nam a omnis earum! Quod odit explicabo ducimus quisquam nam minima id perferendis quam architecto
+        obcaecati?
+        <div class="c_div">abcd</div>
+        <nav style="height:100px; background-color:gold;"></nav>
+    </section>
+    <!-- --- -->
+</body>
+
+</html>
