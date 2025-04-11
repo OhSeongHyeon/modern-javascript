@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .con {
+            width: 300px;
+            height: 200px;
+            margin-top: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 10px solid red;
+        }
+
+        .con>section {
+            height: 100px;
+        }
+
+        .con>section:nth-child(1) {
+            background-color: gold;
+            margin-top: -33.3333%;
+        }
+
+        .con>section:nth-child(2) {
+            background-color: darkgray;
+            margin-left: -100%;
+            margin-right: 100%;
+        }
+
+        .con>section:nth-child(3) {
+            background-color: pink;
+            margin-left: 100%;
+            margin-right: -100%;
+        }
+
+        .con>section:nth-child(4) {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+    </div>
+</body>
+
+</html>
