@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition: background-color .3s, width .2s;
+        }
+        #id_div {
+            width: 0;
+            height: 100px;
+            background-color: blue;
+            transition: background-color .3s, width .2s;
+        }
+        #id_div:hover {
+            width: 50%;
+            transition: background-color 3s, width .2s;
+            background-color: red;
+        }
+        div:hover {
+            width: 50%;
+            transition: background-color 3s, width .2s;
+            background-color: red;
+        }
+        section {
+            background-color: #afafaf;
+        }
+        section:hover>#id_div {
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div id="id_div"></div>
+    </section>
+    <br>
+    <hr>
+    <br>
+    <div></div>
+</body>
+</html>

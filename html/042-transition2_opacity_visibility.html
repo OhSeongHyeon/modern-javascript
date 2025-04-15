@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            background-color: #1e1e1e;
+            width: 500px;
+            height: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        div {
+            background-color: #afafaf;
+            width: 300px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            /* 구글 검색어 - transition display not working */
+            /*
+            display: none;
+            transition: display 3s;
+            */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 3s, visibility 3s;
+        }
+        section:hover>div {
+            /*
+            display: block;
+            */
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>123</div>
+    </section>
+</body>
+</html>
