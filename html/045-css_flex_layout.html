@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+        html {
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+        body,
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100dvh;
+            background-color: darkcyan;
+            /* 임시 */
+        }
+
+        .container>header {
+            background-color: red;
+            /* 임시 */
+            flex-grow: 0;
+            /* 이 부분을 지워보세요.(기본값 0) */
+        }
+
+        /* 콘텐트 시작 */
+        .container>.content {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+        }
+
+        .container>.content>nav {
+            background-color: gold;
+            /* 임시 */
+            flex-basis: 150px;
+            flex-shrink: 0;
+            /* 이 부분을 지워보세요.(기본값 1) */
+        }
+
+        .container>.content>main {
+            background-color: pink;
+            /* 임시 */
+            flex-grow: 1;
+            flex-shrink: 1;
+            /* 이 부분을 지워보세요.(기본값 1) */
+        }
+
+        .container>.content>aside {
+            flex-basis: 120px;
+            flex-shrink: 0;
+            /* 이 부분을 지워보세요.(기본값 1) */
+            background-color: purple;
+            /* 임시 */
+        }
+
+        /* 콘텐트 끝 */
+
+        .container>footer {
+            flex-grow: 0;
+            /* 이 부분을 지워보세요.(기본값 0) */
+            background-color: green;
+            /* 임시 */
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>레이아웃 배우기</h1>
+        </header>
+        <section class="content">
+            <nav>
+                <!-- ul>li*4>a[href="#"]{메뉴 아이템 $} -->
+                <ul>
+                    <li><a href="#">메뉴 아이템 1</a></li>
+                    <li><a href="#">메뉴 아이템 2</a></li>
+                    <li><a href="#">메뉴 아이템 3</a></li>
+                    <li><a href="#">메뉴 아이템 4</a></li>
+                </ul>
+            </nav>
+            <main>
+                <!-- lorem*1 -->
+                Lorem, ipsum dolor sit amet consectetur
+            </main>
+            <aside>
+                추가적인 내용
+            </aside>
+        </section>
+        <footer>
+            <a href="https://se.sbsart.com/">SBS 아카데미</a>
+        </footer>
+    </div>
+</body>
+
+</html>
