@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #afafaf;
+            min-height: 100vh;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        img {
+            margin-left: -100%;
+            transition: margin-left 0.3s;
+        }
+
+        img:nth-of-type(2) {
+            transition: margin-left 0.3s 0.3s;
+        }
+
+        img:nth-of-type(3) {
+            transition: margin-left 0.3s 0.6s;
+        }
+
+        body.active>img {
+            margin-left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://picsum.photos/id/237/800/300" alt="">
+    <img src="https://picsum.photos/id/238/800/300" alt="">
+    <img src="https://picsum.photos/id/239/800/300" alt="">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $('body').mouseenter(function () {
+            $('body').addClass('active');
+        });
+    </script>
+</body>
+
+</html>

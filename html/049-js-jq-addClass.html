@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        셀렉터           | 의미
+        .active         | 클래스가 active인 모든 요소
+        div.active      | div 요소 중에서 클래스가 active인 것
+        div .active     | div 내부 후손 중에서 클래스가 active인 요소
+        #id_div.active  | id="id_div"이고 active 클래스도 있는 요소
+        */
+        body.active {
+            background-color: #afafaf;
+        }
+
+        div {
+            border: 5px solid black;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+
+        div.active {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn-1">body 배경색 변경</button>
+    <button class="btn-2">body 배경색 회복</button>
+    <button id="id_btn">div 배경색 토글</button>
+
+    <div id="id_div"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        /*
+        $('.btn-1').click(function () {
+            $('body').addClass('active');
+        });
+
+        $('.btn-2').click(function () {
+            $('body').removeClass('active');
+        });
+
+        $('#id_btn').click(() => {
+            let has = $('#id_div').hasClass('active');
+            if (has) {
+                $('#id_div').removeClass('active');
+            }
+            else {
+                $('#id_div').addClass('active');
+            }
+        });
+        */
+
+        const $btn1 = document.querySelector('.btn-1');
+        $btn1.addEventListener('click', () => {
+            document.body.classList.add('active');
+        });
+
+        const $btn2 = document.querySelector('.btn-2');
+        $btn2.addEventListener('click', () => {
+            document.body.classList.remove('active');
+        });
+
+        const $btn3 = document.getElementById('id_btn');
+        $btn3.addEventListener('click', () => {
+            const $div = document.getElementById('id_div');
+            /*
+            if ($div.classList.contains('active')) {
+                $div.classList.remove('active');
+            }
+            else {
+                $div.classList.add('active');
+            }
+            */
+            $div.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+
+</html>

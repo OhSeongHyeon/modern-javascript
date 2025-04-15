@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #afafaf;
+            min-height: 100vh;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        img {
+            margin-left: -100%;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://picsum.photos/id/237/800/300" alt="">
+    <img src="https://picsum.photos/id/238/800/300" alt="">
+    <img src="https://picsum.photos/id/239/800/300" alt="">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        /*
+        $('body').mouseenter(function () {
+            $('img:nth-of-type(1)').animate({ 'margin-left': '0' }, 400);
+
+            setTimeout(function () {
+                $('img:nth-of-type(2)').animate({ 'margin-left': '0' }, 400);
+            }, 300);
+
+            setTimeout(function () {
+                $('img:nth-of-type(3)').animate({ 'margin-left': '0' }, 400);
+            }, 600);
+        });
+        */
+
+        //바닐라 js
+        document.body.addEventListener('mouseenter', () => {
+            const $$imgs = document.querySelectorAll('img');
+
+            $$imgs.forEach((img, i) => {
+                setTimeout(() => {
+                    img.animate(
+                        [
+                            { marginLeft: '0' }
+                        ],
+                        {
+                            duration: 400,
+                            fill: 'forwards'
+                        }
+                    );
+                }, 300 * i);
+            });
+        });
+    </script>
+</body>
+
+</html>
