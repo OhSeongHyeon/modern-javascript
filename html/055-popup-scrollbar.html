@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .con {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .con {
+            max-width: 1200px;
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s, visibility .3s;
+        }
+
+        .popup.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup__content {
+            min-width: 200px;
+            min-height: 200px;
+            background-color: white;
+            border: 2px solid black;
+            transform: translateY(-100%);
+            transition: transform .3s;
+        }
+
+        .popup.active .popup__content {
+            transform: translateY(0);
+        }
+
+        .popup__head {
+            padding: 10px;
+        }
+
+        .popup__btn-close {
+            width: 30px;
+            height: 30px;
+            margin-left: auto;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .popup__btn-close:hover {
+            transform: rotate(185deg);
+        }
+
+        .popup__btn-close::before,
+        .popup__btn-close::after {
+            content: "";
+            background-color: black;
+            position: absolute;
+            top: 40%;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            transform: rotate(45deg);
+            transition: box-shadow 0.3s;
+        }
+
+        .popup__btn-close::after {
+            transform: rotate(-45deg);
+        }
+
+        .popup__btn-close:hover::before,
+        .popup__btn-close:hover::after {
+            box-shadow: 0 0 3px black;
+        }
+
+        .popup__body {
+            padding: 0 10px;
+            max-height: calc(100vh - 55px);
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- 팝업1 -->
+    <div class="popup-1 popup">
+        <div class="popup__content">
+            <div class="popup__head">
+                <div class="popup__btn-close"></div>
+            </div>
+            <div class="popup__body">
+                <div class="con">
+                    팝업1
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 팝업2 -->
+    <div class="popup-2 popup">
+        <div class="popup__content">
+            <div class="popup__head">
+                <div class="popup__btn-close"></div>
+            </div>
+            <div class="popup__body" style="background-color: lightgreen;">
+                <div class="con">
+                    팝업2
+                    <br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde cum, voluptates neque, quis odio quos
+                    fugit quaerat omnis eligendi eum distinctio sint voluptatum temporibus animi deleniti delectus. Nam,
+                    tenetur repudiandae.
+                    Doloribus quod tempora quidem ipsa iusto cum nobis. Alias, ut. Fugiat aliquam maiores doloremque.
+                    Quos, temporibus? Reiciendis cumque illo exercitationem, quae doloribus beatae architecto, labore
+                    excepturi amet similique, sunt veniam?
+                    Repudiandae ipsum corrupti, placeat harum sapiente, aspernatur cum assumenda, saepe laudantium
+                    recusandae repellendus. Molestias eaque repellat voluptate ad tenetur. Blanditiis voluptatibus quis
+                    eaque distinctio, libero assumenda? Cumque ratione iure suscipit.
+                    Rerum fuga aut voluptate assumenda doloribus. Sint voluptatum suscipit fuga consequuntur corrupti et
+                    mollitia, iusto quaerat voluptatibus nisi ab soluta ipsa perferendis laudantium totam dolorem
+                    architecto quae harum. Quos, consequuntur?
+                    Ducimus molestias quisquam fugit aspernatur quasi sapiente, pariatur explicabo qui vero officiis
+                    reprehenderit delectus eos ipsum doloremque similique! Quos eius, adipisci reiciendis at et modi aut
+                    esse eos quo voluptate.
+                    Recusandae soluta expedita dolor facilis distinctio atque debitis natus, numquam aliquid quidem
+                    animi, mollitia veniam itaque, earum suscipit ratione dolorum fuga! Sequi commodi ipsa sapiente rem
+                    molestias. Molestiae, accusamus consequuntur.
+                    Unde quas rem officiis impedit nostrum illum aut odit tenetur, quasi recusandae reprehenderit et!
+                    Commodi distinctio quas, minus possimus, magnam cumque sed exercitationem nesciunt porro accusantium
+                    veniam voluptatum maxime impedit.
+                    Placeat quae vel a commodi ab eos totam eligendi ratione laborum id, pariatur enim velit delectus
+                    ullam sint magnam porro aliquam cupiditate nisi hic dolore earum deleniti ad. Perspiciatis, saepe?
+                    Dolorum voluptatem veniam molestias qui. Aliquam error eveniet excepturi in eligendi alias harum
+                    deleniti, omnis accusantium. Ducimus illum, eaque dolore dolorum ipsam ut autem quos. Dicta aliquid
+                    dignissimos autem corrupti!
+                    Doloremque, debitis facere facilis ut provident quas quae totam aspernatur, exercitationem dolore
+                    sint tenetur nemo earum incidunt vitae beatae rem obcaecati minima! Suscipit porro sapiente ducimus
+                    eveniet, maiores consequatur quos.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section-1">
+        <div class="con">
+            <button class="btn-popup-1">팝업 1</button>
+            <button class="btn-popup-2">팝업 2</button>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. In, accusamus ab earum nemo quidem omnis dolore
+            aperiam culpa qui possimus, quae, repellat eligendi vel eveniet excepturi dicta eum impedit cum.
+            Nesciunt vero corporis quasi iure illum soluta consequuntur et dolore consequatur tempore dolorum
+            repellendus quis pariatur mollitia quod asperiores, illo facilis, similique fuga. Placeat labore, minima
+            odio itaque maxime possimus?
+            Optio aliquam dolores ad laudantium quidem temporibus, quam consequuntur ratione repellendus dignissimos.
+            Fugiat totam libero, at dolore vero magnam nostrum mollitia, distinctio unde commodi modi, minima
+            voluptatibus veniam reiciendis sapiente?
+            Distinctio qui consectetur esse at repellat, labore error aspernatur excepturi suscipit molestias numquam
+            quod corrupti, quo mollitia, facilis amet enim temporibus quos impedit. Sequi est quas ullam corrupti cum
+            expedita?
+            Quisquam itaque fugiat sed asperiores consequatur fugit explicabo tempora ipsum nesciunt hic neque
+            perspiciatis quasi est harum obcaecati, porro dignissimos rerum! Eius totam repellendus harum fuga culpa
+            quibusdam. Voluptate, necessitatibus?
+            Praesentium alias numquam incidunt dolorem harum tempora magnam ipsam expedita eaque dolores vel ducimus
+            debitis cumque, veniam sit consectetur corporis quos reiciendis voluptatibus voluptates libero quidem illum.
+            Labore, quaerat quisquam?
+            Alias minus perferendis debitis quaerat a reprehenderit quos reiciendis quo velit inventore harum voluptas
+            tenetur sequi laborum ab repellat nesciunt, iste, in itaque excepturi? Necessitatibus labore impedit tempore
+            pariatur dolorum.
+            Itaque et vel beatae cumque in veniam. Nulla quasi dolore eaque quisquam voluptate quam? Id dolores beatae,
+            sequi iure culpa labore delectus quaerat quos voluptates autem vel facere perspiciatis deserunt.
+            Amet ipsam expedita autem officia? Ipsam earum repellendus cumque vero dolores consequuntur modi consectetur
+            corrupti, iste facere accusantium odio repellat quod eius harum magni quam doloribus nisi vel, perferendis
+            facilis!
+            Soluta aliquam, commodi inventore nihil at, possimus optio aspernatur corrupti consequuntur nisi
+            repellendus, pariatur a amet vel nesciunt ipsam fuga natus. Facilis facere minima laboriosam placeat eaque
+            perspiciatis dolorum. Dolore.
+            Accusantium voluptatibus sequi esse perferendis? Nobis officia fuga, quis placeat rem tempore! Quia, facilis
+            dolore, in aspernatur eveniet maxime unde adipisci quibusdam minima laborum perspiciatis accusantium
+            cupiditate debitis, repudiandae sequi?
+            Tempora deleniti, corporis non vel dolorum natus repellendus neque, a provident corrupti perferendis
+            nesciunt ipsum, animi debitis in! Necessitatibus, ipsam esse. Dolorem reiciendis, ratione magnam veritatis a
+            expedita enim nemo.
+            Cumque fuga temporibus maxime facilis doloremque? Officiis doloremque voluptates incidunt adipisci culpa
+            architecto, quae cumque pariatur saepe nostrum, sequi ad minus. Iure tempora explicabo perferendis
+            repudiandae, aliquid amet reprehenderit quaerat!
+            Quaerat suscipit itaque quas rerum quo. Soluta maxime illum laborum vero, rem impedit unde at error atque
+            modi itaque, explicabo eius eligendi sapiente neque tempore perferendis veniam perspiciatis assumenda?
+            Repellat!
+            At eum eos dolor eius sunt dolorem consectetur alias, iste veritatis aperiam repudiandae explicabo optio
+            provident! Inventore, possimus deleniti? Maxime eligendi reprehenderit consectetur eos consequatur rerum
+            porro inventore alias eum!
+            Eum mollitia, quibusdam cum animi tempore assumenda nihil necessitatibus. Quam quos ipsa vel ipsum doloribus
+            facere, hic soluta est ex magnam! Modi ab quos, totam ad esse unde non cum!
+            Excepturi natus deserunt quasi, fugiat explicabo laudantium accusamus hic ratione molestias earum repellat
+            voluptas incidunt libero, voluptate voluptatem aut unde nesciunt non iste id. Tempora libero labore vel
+            ipsam quo!
+            Ipsam nemo quas dignissimos possimus nulla. Ipsam nemo possimus veritatis deserunt ab sed voluptate, illo
+            consequuntur! Perspiciatis at, corrupti suscipit id quis dignissimos nemo inventore cum laborum, voluptates
+            nulla a.
+            Quam excepturi ipsum suscipit assumenda distinctio dolorem hic perspiciatis optio, ullam, nulla sunt
+            laboriosam maxime repellendus fuga. Voluptatum possimus, porro cumque, fuga nesciunt, minima at quis
+            molestias incidunt voluptatem repellat!
+            Voluptatem, alias amet cum dolores quidem inventore veritatis voluptatum sint ratione explicabo laborum
+            dicta eum sed eligendi quibusdam recusandae. Distinctio, similique! Facilis eaque consequatur dicta velit
+            minima, quasi repellat sint?
+            Labore atque, eius minima totam magnam maiores sed corporis molestias necessitatibus, aut, mollitia sit
+            vitae laborum quis cum alias explicabo suscipit libero voluptatem porro eligendi vero earum ipsum placeat.
+            Magnam.
+            Distinctio fugit est autem ut repudiandae optio dicta expedita! Nostrum commodi mollitia repudiandae dicta.
+            Corporis velit quam optio! Perferendis est omnis sit aut iure aliquid magni nemo, aspernatur dolores
+            corporis!
+            Iusto animi nam provident ut quasi nisi deserunt necessitatibus, ipsam ullam sint reprehenderit earum beatae
+            numquam fuga perspiciatis esse quae pariatur commodi vero, nesciunt eum in eos error! Ipsum, corrupti!
+            Vitae, ipsum architecto consectetur aspernatur possimus quis perferendis corrupti sit expedita, aliquid, ea
+            dolorum deleniti impedit in assumenda nemo obcaecati asperiores. Amet voluptate, inventore doloremque eaque
+            minus quibusdam quis nihil.
+            Quas quibusdam nemo error sed, iste dolorem aut cumque rerum natus consequuntur delectus voluptatem harum
+            officia ut similique quia dolor sint aliquam soluta nobis! Nobis vel exercitationem illo minus corporis?
+            Quae, dolorem. Eum ea accusantium doloribus animi officiis recusandae praesentium laudantium quas iusto,
+            accusamus neque quo. Sed esse, error quibusdam quia mollitia repudiandae velit quaerat, numquam aperiam
+            officiis harum ullam.
+            Cumque, earum doloremque nam architecto sit quo reprehenderit aspernatur dignissimos sapiente accusantium
+            magnam, qui non saepe fugit tempore expedita deleniti libero vero perspiciatis amet distinctio, quas
+            asperiores. Accusantium, illo quasi.
+            Iusto, harum ab. Nesciunt delectus incidunt quasi at vero, voluptas similique ullam dolores optio nihil
+            illum enim perspiciatis dolore officiis? Suscipit quis culpa fugiat iusto est dignissimos perspiciatis,
+            voluptatum nobis!
+            Unde eligendi ullam esse natus inventore expedita velit, reiciendis, in, voluptate dolores vitae! A,
+            asperiores nostrum? Debitis earum, maiores sed sequi delectus autem optio inventore nulla recusandae maxime
+            explicabo voluptas.
+            Maxime, sit tenetur hic iusto accusamus dolor culpa alias itaque praesentium dolorem placeat dolore
+            molestiae repellat, possimus, fugit ipsam eligendi error quidem consectetur aperiam sint sunt repudiandae
+            modi blanditiis? Dignissimos?
+            Fuga alias doloribus nobis similique beatae maxime voluptatibus totam. Suscipit, fugiat quidem. Sunt iure
+            dolor placeat laboriosam labore nulla ducimus? Recusandae facilis deserunt ducimus tempora, amet inventore
+            veritatis eum sequi!
+            Nobis sint fuga ducimus natus! Optio itaque excepturi voluptas. Ea facilis ex odio rerum perferendis ipsam
+            consequatur sapiente voluptatibus asperiores, voluptate labore soluta autem quidem natus qui officiis, illum
+            voluptatem.
+            Id numquam nihil voluptatibus! Eum assumenda exercitationem velit obcaecati mollitia voluptate, quo enim
+            tempore ipsum, aperiam, officiis pariatur accusamus odio consectetur beatae repellendus ut eos? Tempora
+            praesentium illum laborum. Aperiam!
+            Nesciunt dolor maiores nulla nostrum voluptatibus quae placeat vitae perferendis dolorum voluptatum corporis
+            deleniti dolorem in praesentium quis hic excepturi, voluptates labore? Ratione ipsum nesciunt quisquam
+            earum, dolore totam adipisci?
+            Quod enim odit quisquam, quia ducimus nobis debitis autem perferendis facilis facere, libero sapiente eius
+            at earum? Ad accusantium, eum harum quo rerum soluta, labore nobis explicabo est, sunt sapiente.
+            Explicabo officia id consequuntur nemo dignissimos perferendis tempora deleniti atque. Architecto totam
+            esse, itaque quos maxime dicta eius beatae illo, eum repudiandae reiciendis doloremque eveniet ut sunt?
+            Commodi, incidunt officiis.
+            Expedita nostrum sint blanditiis labore voluptas rem sapiente quis! Tempore asperiores totam exercitationem
+            quibusdam assumenda cumque, nisi possimus tempora, neque dolor earum perspiciatis placeat odit dolorum quis
+            beatae consequatur esse.
+            Voluptatibus consequatur sequi voluptatem. Quod mollitia id facilis similique eligendi, optio, quia a,
+            perspiciatis accusantium nesciunt quam velit aut illo sunt consectetur reiciendis maiores repellendus sint.
+            Libero beatae itaque quos.
+            Quasi asperiores impedit aspernatur similique, vitae voluptates provident corporis possimus blanditiis
+            repudiandae nemo, natus quae adipisci quidem harum alias id delectus ea earum. Itaque autem suscipit quo
+            dignissimos, aspernatur libero!
+            Doloremque asperiores, eum voluptate aperiam, amet sit soluta incidunt rerum consectetur a nulla sapiente
+            nesciunt voluptatum dolores fugit. Incidunt dolore aperiam odio doloribus! Ad velit necessitatibus odit.
+            Quo, provident aut!
+        </div>
+    </section>
+    <script>
+        /*
+        function Popup__init(no) {
+            $('.btn-popup-' + no).click(function () {
+                $('.popup-' + no).addClass('active');
+            });
+
+            $('.popup-' + no + ' .popup__btn-close, .popup-' + no).click(function () {
+                $('.popup-' + no).removeClass('active');
+            });
+
+            $('.popup-' + no + ' .popup__content').click(function () {
+                return false;
+            });
+        }
+        */
+        // Vanilla js
+        function Popup__init(no) {
+            const btn = document.querySelector('.btn-popup-' + no);
+            const popup = document.querySelector('.popup-' + no);
+            const closeBtn = popup.querySelector('.popup__btn-close');
+            const content = popup.querySelector('.popup__content');
+    
+            // 팝업 열기
+            btn.addEventListener('click', () => {
+                popup.classList.add('active');
+            });
+    
+            // 팝업 닫기 - 마스크 클릭 또는 닫기 버튼 클릭
+            popup.addEventListener('click', () => {
+                popup.classList.remove('active');
+            });
+    
+            // 팝업 내부 콘텐츠 클릭 시 닫히지 않도록 이벤트 전파 막기
+            content.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+    
+            // 닫기 버튼 클릭 시 팝업 닫기
+            closeBtn.addEventListener('click', () => {
+                popup.classList.remove('active');
+            });
+        }
+        Popup__init(1);
+        Popup__init(2);
+    </script>
+</body>
+
+</html>

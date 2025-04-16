@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <h1>예제 1, 일반</h1>
+    <a href="https://www.naver.com" target="_blank">네이버 새창</a>
+    <h1>예제 2, preventDefault</h1>
+    <a onclick="event.preventDefault();" href="https://www.naver.com" target="_blank">네이버 새창</a>
+    <h1>예제 3, preventDefault(return false;)</h1>
+    <a onclick="return false;" href="https://www.naver.com" target="_blank">네이버 새창</a>
+    <h1>예제 4, Vanilla js preventDefault</h1>
+    <a id="a4" href="https://www.naver.com" target="_blank">네이버 새창</a>
+    <h1>예제 5, 제이쿼리 preventDefault, return false;</h1>
+    <a class="a5" href="https://www.naver.com" target="_blank">네이버 새창</a>
+
+    <hr>
+
+    <div style="margin-top: 10px;">
+        <input type="button" value="작성">
+        <button type="button">작성2</button>
+        <a onclick="if ( confirm('정말 삭제하시겠습니까?') == false ) { return false; }" href="https://www.naver.com" target="_blank">삭제</a>
+        <a onclick="if ( !confirm('정말 삭제하시겠습니까?') ) { event.preventDefault(); }" href="https://www.naver.com" target="_blank">삭제2</a>
+        <a onclick="f_aClick(event)" href="https://www.naver.com" target="_blank">삭제3</a>
+    </div>
+
+    <script>
+        /*
+        // 제이쿼리 방법, e.preventDefault();
+        $('#a4').click(function (e) {
+            e.preventDefault();
+        });
+        */
+        document.getElementById("a4").addEventListener('click', (event) => {
+            event.preventDefault();
+        });
+        // 제이쿼리 방법, e.preventDefault(); return false;
+        $('.a5').click(function () {
+            return false;
+        });
+
+        function f_aClick(event) {
+            let isDel = confirm('real delete???');
+            if (!isDel) event.preventDefault();
+        }
+    </script>
+</body>
+
+</html>
