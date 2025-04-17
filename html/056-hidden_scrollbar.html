@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: lightgreen;
+            min-height: 250vh;
+        }
+
+        html.overflow-hidden,
+        html.overflow-hidden>body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="btn-turn-off-scroll-bar">스크롤바 끄기</button>
+    <button class="btn-turn-on-scroll-bar">스크롤바 켜기</button>
+    <div></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        /*
+        $('.btn-turn-off-scroll-bar').click(function () {
+            $('html').addClass('overflow-hidden');
+        });
+        $('.btn-turn-on-scroll-bar').click(function () {
+            $('html').removeClass('overflow-hidden');
+        });
+        */
+
+        const $html = document.querySelector('html');
+        const $btn_off = document.querySelector('.btn-turn-off-scroll-bar');
+        const $btn_on = document.querySelector('.btn-turn-on-scroll-bar');
+        $btn_off.addEventListener('click', () => {
+            $html.classList.add('overflow-hidden');
+        });
+        $btn_on.addEventListener('click', () => {
+            $html.classList.remove('overflow-hidden');
+        });
+    </script>
+</body>
+
+</html>
