@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.4/tailwind.min.css">
+
+    <style>
+        .box-1>.active {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="id_div" class="box-1 border-2 border-red-500 min-h-screen flex">
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        /** 마우스 박스안에 드갈때 색상 토글 
+        document.getElementById('id_div')
+            .querySelectorAll('section')
+            .forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    const bgc = element.style.backgroundColor
+                    element.style.backgroundColor = (bgc === 'lightgreen') ? '' : 'lightgreen'
+                })
+            })
+        */
+        /* 클릭한 대상 제외 하고 좌우 색상 변경
+        $('.box-1 > *').click(function () {
+            let $this = $(this);
+            $this.removeClass('active');
+            $this.prev().addClass('active');
+            $this.next().addClass('active');
+        });
+        */
+        const children = document.querySelectorAll('.box-1>*')
+        children.forEach(child => {
+            child.addEventListener('mouseenter', () => {
+                child.classList.remove('active')
+                /* 옵셔널 체이닝 */
+                child.previousElementSibling?.classList.add('active')
+                child.nextElementSibling?.classList.add('active')
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.4/tailwind.min.css">
+
+    <style>
+        .box-1>.active {
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>박스, first</h1>
+
+    <div class="box-1 border-4 border-red-500 h-40 flex">
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+    </div>
+
+    <h1>박스, second</h1>
+
+    <div class="box-1 border-4 border-red-500 h-40 flex">
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+    </div>
+
+    <h1>박스, third</h1>
+
+    <div class="box-1 border-4 border-red-500 h-40 flex">
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+        <section class="border-2 border-blue-500 flex-1"></section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        /* 제이거링
+        $('.box-1 > *').click(function () {
+            let $this = $(this);
+            $this.removeClass('active');
+            $this.siblings().addClass('active');
+        });
+        */
+        //------------------------------------
+        const $$boxes = document.querySelectorAll('.box-1')
+        $$boxes.forEach((box) => {
+            const $$children = box.querySelectorAll('*');
+            $$children.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    el.classList.remove('active')
+                    $$children.forEach(te => {
+                        if (te !== el) te.classList.add('active')
+                    })
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
