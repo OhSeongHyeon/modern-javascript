@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 폰트어썸 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- 폰트어썸 FREE 아이콘 리스트 : https://fontawesome.com/v5.15/icons?d=gallery&p=2&m=free -->
+
+    <!-- 테일윈드 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.4/tailwind.min.css">
+    <!-- 테일윈드 치트시트 : https://nerdcave.com/tailwind-cheat-sheet -->
+
+    <!-- 폰트 -->
+    <style>
+        @font-face {
+            font-family: 'LotteMartDream';
+            font-style: normal;
+            font-weight: 400;
+            src: url('https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2') format('woff2'), url('https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'LotteMartDream';
+            font-style: normal;
+            font-weight: 700;
+            src: url('https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2') format('woff2'), url('https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'LotteMartDream';
+            font-style: normal;
+            font-weight: 300;
+            src: url('https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2') format('woff2'), url('https://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff') format('woff');
+        }
+
+        html>body {
+            font-family: 'LotteMartDream', sans-serif;
+        }
+
+        body {
+            min-height: 500vh;
+            background-image: linear-gradient(to bottom, #787878, #afafaf);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="top-bar hidden md:block h-12 fixed inset-0 bottom-auto bg-gray-500 text-white">
+        <div class="container mx-auto h-full flex">
+            <a href="#" class="top-bar__logo flex items-center ml-3">
+                <span><i class="far fa-lemon"></i></span>
+                &nbsp;
+                <span class="font-bold">DESIGN LEMON</span>
+            </a>
+
+            <div class="flex-grow"></div>
+
+            <nav class="top-bar__menu-box-1">
+                <ul class="flex h-full">
+                    <li class="hover:bg-white hover:text-gray-500">
+                        <a href="#" class="h-full flex items-center px-4">
+                            <span><i class="fas fa-home"></i></span>
+                            &nbsp;
+                            <span class="font-bold">HOME</span>
+                        </a>
+                    </li>
+                    <li class="hover:bg-white hover:text-gray-500">
+                        <a href="#" class="h-full flex items-center px-4">
+                            <span><i class="fas fa-id-card"></i></span>
+                            &nbsp;
+                            <span class="font-bold">ABOUT ME</span>
+                        </a>
+                    </li>
+                    <li class="hover:bg-white hover:text-gray-500">
+                        <a href="#" class="h-full flex items-center px-4">
+                            <span><i class="fas fa-newspaper"></i></span>
+                            &nbsp;
+                            <span class="font-bold">ARTICLES</span>
+                        </a>
+                    </li>
+                    <li class="hover:bg-white hover:text-gray-500">
+                        <a href="#" class="h-full flex items-center px-4">
+                            <span><i class="fas fa-people-arrows"></i></span>
+                            &nbsp;
+                            <span class="font-bold">SNS</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <header class="mobile-top-bar fixed md:hidden fixed inset-0 bottom-auto h-12 bg-gray-500 text-white">
+        <div class="container mx-auto h-full flex">
+            <div class="flex-1"></div>
+            <a href="#" class="mobile-top-bar__logo flex items-center">
+                <span><i class="far fa-lemon"></i></span>
+                &nbsp;
+                <span class="font-bold">DESIGN LEMON</span>
+            </a>
+            <div class="flex-1 flex justify-end">
+                <span class="mobile-top-bar__btn-show-side-bar flex items-center mr-3">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <div class="h-12"></div>
+
+    <section class="section-1">
+        <div class="container mx-auto">
+            <div class="mx-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati eius aperiam debitis sed maiores,
+                odit quisquam consequuntur numquam voluptates. Corrupti, totam temporibus tenetur quo autem expedita
+                sapiente officiis non pariatur!
+                Ipsa accusantium, magnam unde sapiente nihil ab eum blanditiis laboriosam optio, reprehenderit suscipit
+                officiis beatae commodi rem ducimus magni atque cupiditate necessitatibus dignissimos expedita obcaecati
+                dolores. Rem voluptatum dolore deleniti.
+                Dolores laboriosam, blanditiis unde quas voluptates facere, incidunt explicabo illum adipisci nam ea
+                accusamus delectus ipsam qui soluta nemo sapiente ab natus aliquam ducimus dolorum possimus? Officiis
+                quasi fuga laudantium!
+                Quos cupiditate, voluptatum officia consequatur nobis dolorum omnis non nesciunt architecto harum
+                aspernatur, rerum, inventore quae iste repudiandae consequuntur quaerat similique explicabo. Fugit
+                maiores unde, rerum ab sint temporibus! At.
+                Nesciunt repellendus corrupti rerum in laudantium maxime nostrum officia mollitia nam consequatur sit
+                voluptate cumque architecto impedit neque, illo voluptatem quo repudiandae dolor maiores? Perferendis
+                similique minima sapiente molestias quaerat.
+            </div>
+        </div>
+    </section>
+
+    <!-- 제이쿼리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+</body>
+
+</html>
