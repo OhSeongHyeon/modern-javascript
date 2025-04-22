@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 유용한 링크 -->
+    <!-- cdnsj : https://cdnjs.com/ -->
+    <!-- 폰트어썸 아이콘 리스트 : https://fontawesome.com/icons?d=gallery&m=free -->
+
+    <!-- 구글 폰트 불러오기 -->
+    <!-- rotobo(400/700/900), notosanskr(400/600/900) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Roboto:wght@400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- 폰트어썸 불러오기 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <style>
+        @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+        html {
+            /* 영문이면 roboto가 적용되고, 한글이면 Noto Sans KR가 적용되도록 아래와 같은 순서로 배치 */
+            font-family: "Roboto", "Noto Sans KR", sans-serif;
+        }
+
+        /* 노말라이즈 */
+        body,
+        ul,
+        li,
+        h1 {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .logo>img {
+            height: 26px;
+            width: 216px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        label[for] {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* 라이브러리 */
+        .block {
+            display: block;
+        }
+
+        .inline-block {
+            display: inline-block;
+        }
+
+        .absolute-left {
+            position: absolute;
+            left: 0;
+        }
+
+        .absolute-right {
+            position: absolute;
+            right: 0;
+        }
+
+        .absolute-bottom {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .absolute-top {
+            position: absolute;
+            top: 0;
+        }
+
+        .absolute-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .absolute-middle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .absolute-middle.absolute-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .cell {
+            float: left;
+            box-sizing: border-box;
+        }
+
+        .cell-right {
+            float: right;
+            box-sizing: border-box;
+        }
+
+        .row::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .clear-both {
+            clear: both;
+        }
+
+        .img-box>img {
+            width: 100%;
+            display: block;
+        }
+
+        .con {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .margin-0-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .text-align-center {
+            text-align: center;
+        }
+
+        .text-align-right {
+            text-align: right;
+        }
+
+        .line-height-0 {
+            line-height: 0;
+        }
+
+        .line-height-0>* {
+            line-height: normal;
+        }
+
+        .width-30px {
+            width: 30px;
+        }
+
+        .width-35px {
+            width: 35px;
+        }
+
+        .width-40px {
+            width: 35px;
+        }
+
+        .width-45px {
+            width: 35px;
+        }
+
+        .width-50px {
+            width: 50px;
+        }
+
+        .width-80px {
+            width: 80px;
+        }
+
+        .width-100px {
+            width: 100px;
+        }
+
+        .width-100p {
+            width: 100%;
+        }
+
+        .width-60p {
+            width: 60%;
+        }
+
+        .width-55p {
+            width: 55%;
+        }
+
+        .width-50p {
+            width: 50%;
+        }
+
+        .width-45p {
+            width: 45%;
+        }
+
+        .width-40p {
+            width: 40%;
+        }
+
+        .width-30p {
+            width: 30%;
+        }
+
+        .width-35p {
+            width: 35%;
+        }
+
+        .width-100p-except-30px {
+            width: calc(100% - 30px);
+        }
+
+        .width-100p-except-35px {
+            width: calc(100% - 35px);
+        }
+
+        .width-100p-except-40px {
+            width: calc(100% - 40px);
+        }
+
+        .width-100p-except-50px {
+            width: calc(100% - 50px);
+        }
+
+        .width-100p-except-80px {
+            width: calc(100% - 80px);
+        }
+
+        .width-100p-except-100px {
+            width: calc(100% - 100px);
+        }
+
+        .height-100p {
+            height: 100%;
+        }
+
+        .height-50p {
+            height: 50%;
+        }
+
+        .border-box {
+            box-sizing: border-box;
+        }
+
+        .font-size-dot-8rem {
+            font-size: 0.8rem;
+        }
+
+        .table-row {
+            display: table;
+        }
+
+        .table-row.row::after {
+            display: inline;
+            clear: non;
+        }
+
+        .table-row>.cell {
+            float: none;
+            display: table-cell;
+        }
+
+        .border-red {
+            border: 10px solid red;
+        }
+
+        .border-green {
+            border: 10px solid green;
+        }
+
+        .border-blue {
+            border: 10px solid blue;
+        }
+
+        .border-gold {
+            border: 10px solid gold;
+        }
+
+        .border-pink {
+            border: 10px solid pink;
+        }
+
+        /* 라이브러리 - flex */
+        *>.flex {
+            display: flex;
+        }
+
+        *>.flex-grow-1 {
+            flex-grow: 1;
+        }
+
+        *>.flex-jc-c {
+            justify-content: center;
+        }
+
+        *>.flex-jc-s {
+            justify-content: flex-start;
+        }
+
+        *>.flex-jc-e {
+            justify-content: flex-end;
+        }
+
+        *>.flex-jc-sb {
+            justify-content: space-between;
+        }
+
+        *>.flex-jc-sa {
+            justify-content: space-around;
+        }
+
+        *>.flex-ai-c {
+            align-items: center;
+        }
+
+        *>.flex-ai-s {
+            align-items: flex-start;
+        }
+
+        *>.flex-ai-e {
+            align-items: flex-end;
+        }
+
+        *>.flex-as-s {
+            align-self: stretch;
+        }
+
+        *>.flex-as-c {
+            align-self: center;
+        }
+
+        *>.flex-as-s {
+            align-self: flex-start;
+        }
+
+        *>.flex-as-e {
+            align-self: flex-end;
+        }
+
+        *>.flex-column-nowrap {
+            flex-flow: column nowrap;
+        }
+
+        *>.flex-column-wrap {
+            flex-flow: column wrap;
+        }
+
+        *>.flex-row-wrap {
+            flex-flow: row wrap;
+        }
+
+        .flex-ch-basis-0>* {
+            flex-basis: 0;
+        }
+
+        *>.flex-1-0-0 {
+            flex: 1 0 0;
+        }
+
+        *>.bg-red {
+            background-color: red;
+        }
+
+        @media (max-width: 1024px) {
+            .visible-on-web_size {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .visible-on-mobile_size {
+                display: none;
+            }
+        }
+
+        /* 커스텀 */
+        .con {
+            max-width: 1140px;
+        }
+
+        body {
+            height: 1000px;
+        }
+
+        /* 탑바 */
+        .top_bar {
+            height: 72px;
+            /*임시*/
+            background-color: #afafaf;
+            /*임시*/
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background-color: white;
+        }
+
+        .top_bar>.con>.menu_box_1>ul>li>a {
+            font-weight: bold;
+            color: #1e1e1e;
+            font-size: 17px;
+            padding: 0 10px;
+            position: relative;
+        }
+
+        /* 1차메뉴 아이템 아래 막대기 */
+        .top_bar>.con>.menu_box_1>ul>li>a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: transparent;
+            transition: background-color 0.3s, width 0.3s;
+        }
+
+        .top_bar>.con>.menu_box_1>ul>li:hover>a::after {
+            width: 100%;
+            background-color: black;
+        }
+
+        /* 2차 메뉴 */
+        .top_bar>.con>.menu_box_1>ul>li {
+            position: relative;
+        }
+
+        .top_bar>.con>.menu_box_1>ul>li>ul {
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+            /*   display: none; */
+            opacity: 0;
+            visibility: hidden;
+            padding: 17px 0;
+            transition: opacity 0.2s, visibility 0.2s;
+        }
+
+        .top_bar>.con>.menu_box_1>ul>li:hover>ul {
+            /*   display: block; */
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .top_bar>.con>.menu_box_1>ul>li>ul>li>a {
+            white-space: nowrap;
+            font-size: 17px;
+            font-weight: bold;
+            color: #666666;
+            display: block;
+            padding: 10px 0;
+        }
+
+        .top_bar>.con>.menu_box_1>ul>li>ul>li:hover>a {
+            color: #1e1e1e;
+        }
+
+        /* 2차메뉴 bg */
+        .top_bar .menu_box_1>.bg {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: 0;
+            left: 0;
+            background-color: white;
+            transition: height 0.1s;
+        }
+
+        /* 모바일 탑바 */
+        .mobile_top_bar {
+            height: 57px;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0 30px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #e9e9e9;
+        }
+
+        /* 토글버튼 */
+        .btn_toggle {
+            width: 30px;
+            height: 30px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .btn_toggle>div {
+            position: absolute;
+            background-color: black;
+            height: 2px;
+            width: 100%;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%) rotate(0);
+            transition: transform 0.3s cubic-bezier(1, 0.14, 0, 1.29), top 0.3s;
+        }
+
+        .btn_toggle>div:last-child {
+            top: 70%;
+            transform: translateX(-50%) translateY(-50%) rotate(0);
+        }
+
+        .btn_toggle.active>div {
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        }
+
+        .btn_toggle.active>div:last-child {
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top_bar visible-on-web_size">
+        <div class="con height-100p flex flex-jc-sb">
+            <a href="#" class="logo flex flex-ai-c">
+                <img src="https://kakaopaysec.com/resources/images/bi.png" alt="">
+            </a>
+
+            <nav class="menu_box_1">
+                <ul class="height-100p flex">
+                    <li>
+                        <a href="#" class="flex flex-ai-c height-100p">회사소개</a>
+                        <ul>
+                            <li><a href="#">회사개요</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="flex flex-ai-c height-100p">비즈니스</a>
+                        <ul>
+                            <li><a href="#">개인금융 서비스</a></li>
+                            <li><a href="#">기업금융 서비스</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="flex flex-ai-c height-100p">경영정보</a>
+                        <ul>
+                            <li><a href="#">정기보고서</a></li>
+                            <li><a href="#">공시정보</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="flex flex-ai-c height-100p">고객센터</a>
+                        <ul>
+                            <li><a href="#">소비자보호포털</a></li>
+                            <li><a href="#">계좌개설안내</a></li>
+                            <li><a href="#">예탁금이용안내</a></li>
+                            <li><a href="#">수수료안내</a></li>
+                            <li><a href="#">상속업무안내</a></li>
+                            <li><a href="#">신용공여 및 매매 관련 안내</a></li>
+                            <li><a href="#">주식판매금 미리받기 안내</a></li>
+                            <li><a href="#">기타업무안내</a></li>
+                            <li><a href="#">고객유의사항</a></li>
+                            <li><a href="#">약관/서식</a></li>
+                            <li><a href="#">주식공지</a></li>
+                            <li><a href="#">상품공지</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">이해상충 및 정보교류차단 주요내용</a></li>
+                            <li><a href="#">해외주식 시세 관련 유의사항</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="flex flex-ai-c height-100p">채용정보</a>
+                        <ul>
+                            <li><a href="#">채용공고</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="bg"></div>
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="mobile_top_bar visible-on-mobile_size flex flex-jc-sb">
+        <a href="#" class="logo flex flex-ai-c">
+            <img src="https://kakaopaysec.com/resources/images/bi.png" alt="">
+        </a>
+
+        <div class="btn_toggle flex flex-as-c">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="page-1" style="margin-top:72px;">
+        <div class="img-box">
+            <!-- <img src="https://kakaopaysec.com/resources/images/main-visual01.jpg" alt=""> -->
+        </div>
+    </div>
+
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        /*
+        function Mobile_TopBar__init() {
+            $(".mobile_top_bar .btn_toggle").click(function () {
+                $(this).toggleClass("active");
+            });
+        }
+
+        function TopBar__init() {
+            $(".top_bar .menu_box_1 > ul > li").mouseover(function () {
+                var $height = $(this).find("> ul").height();
+
+                var height_plus = $height + 50;
+
+                $(".bg").css("height", height_plus + "px");
+            });
+
+            $(".top_bar .menu_box_1 > ul > li").mouseleave(function () {
+                $(".bg").css("height", "0px");
+            });
+        }
+
+        TopBar__init();
+        Mobile_TopBar__init();
+        */
+
+        function Mobile_TopBar__init() {
+            const toggleBtn = document.querySelector('.mobile_top_bar .btn_toggle');
+            toggleBtn.addEventListener('click', () => {
+                toggleBtn.classList.toggle('active');
+            });
+        }
+
+        function TopBar__init() {
+            const topBarItems = document.querySelectorAll('.top_bar .menu_box_1 > ul > li');
+            const bg = document.querySelector('.top_bar .menu_box_1 > .bg');
+
+            topBarItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    bg.style.height = `${item.querySelector('ul').offsetHeight + 50}px`
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    bg.style.height = '0px';
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            TopBar__init();
+            Mobile_TopBar__init();
+        });
+    </script>
+
+</body>
+
+</html>
