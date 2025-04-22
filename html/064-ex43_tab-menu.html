@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 테일윈드 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.2/tailwind.min.css">
+    <!-- 테일윈드 치트시트 : https://nerdcave.com/tailwind-cheat-sheet -->
+    <style>
+        .box-1 {
+            background-color: #dfdfdf;
+        }
+
+        .box-1__head>ul>li>a {
+            border: 1px solid transparent;
+            margin-bottom: -1px;
+        }
+
+        .box-1__head>ul>li.active>a {
+            border: 1px solid black;
+            border-bottom-color: #dfdfdf;
+        }
+
+        .box-1__head>ul>li:first-child>a {
+            border-left-color: transparent;
+        }
+
+        .box-1__main>ul>li {
+            display: none;
+        }
+
+        .box-1__main>ul>li.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="section section-1">
+        <div class="container mx-auto">
+            <div class="box-1">
+                <div class="box-1__head border-b border-black">
+                    <ul class="flex">
+                        <li class="active">
+                            <a class="block p-5 font-bold cursor-pointer">
+                                아이템 1
+                            </a>
+                        </li>
+                        <li>
+                            <a class="block p-5 font-bold cursor-pointer">
+                                아이템 2
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-1__main">
+                    <ul>
+                        <li class="active">
+                            아이템 1 내용
+                        </li>
+                        <li>
+                            아이템 2 내용
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 제이쿼리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- <script>
+        function Box1__init() {
+            $('.box-1__head > ul > li').click(function () {
+                // 클릭당한 녀석
+                let $this = $(this);
+                // 클릭당한 녀석의 형제번호(0 부터 시작)
+                let thisIndex = $this.index();
+
+                // 클릭당한 녀석의 형제 중에서 활성화된 녀석 제거
+                $this.siblings('.active').removeClass('active');
+                // 클릭당한 녀석이 active를 갖는다.
+                $this.addClass('active');
+
+                // 공통 조상까지 올라간다.
+                // v1
+                /*
+                let $box1 = $this.parent().parent().parent();
+                let $box1Main = $box1.find(' > .box-1__main');
+                */
+                // v2
+                /*
+                let $box1Main = $this.parent().parent().next();
+                */
+                // v3
+                let $box1 = $this.closest('.box-1');
+                let $box1Main = $box1.find('.box-1__main');
+
+                $box1Main.find(' > ul > li.active').removeClass('active');
+                $box1Main.find(' > ul > li').eq(thisIndex).addClass('active');
+            });
+        }
+
+        Box1__init();
+    </script> -->
+
+    <!-- Vanilla js -->
+    <script>
+        function Box1__init() {
+            const tabItems = document.querySelectorAll('.box-1__head > ul > li');
+
+            tabItems.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    const box = tab.closest('.box-1');
+                    const tabHeadItems = box.querySelectorAll('.box-1__head > ul > li');
+                    const tabContentItems = box.querySelectorAll('.box-1__main > ul > li');
+
+                    // 헤더 탭 초기화
+                    tabHeadItems.forEach(item => item.classList.remove('active'));
+                    // 클릭된 탭 활성화
+                    tab.classList.add('active');
+
+                    // 본문 탭 초기화
+                    tabContentItems.forEach(item => item.classList.remove('active'));
+                    // 클릭된 탭의 index에 해당하는 콘텐츠 활성화
+                    if (tabContentItems[index]) {
+                        tabContentItems[index].classList.add('active');
+                    }
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            Box1__init();
+        });
+    </script>
+
+</body>
+
+</html>
