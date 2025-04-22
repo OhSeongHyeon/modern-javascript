@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 노말라이즈 */
+        body {
+            margin: 0;
+        }
+
+        /* 범용 나이스스크롤바 시작 */
+        /* 노말라이즈 */
+        body {
+            margin: 0;
+        }
+
+        html.touch-disabled .nicescroll {
+            overflow: auto;
+        }
+
+        html.touch-disabled .nicescroll-rails {
+            overflow: hidden;
+        }
+
+        html.touch-disabled .nicescroll-more-box {
+            position: relative;
+        }
+
+        html.touch-disabled .nicescroll-more-box::before,
+        html.touch-disabled .nicescroll-more-box::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 15px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+            pointer-events: none;
+        }
+
+        html.touch-disabled .nicescroll-more-box::after {
+            left: auto;
+            right: 0;
+            transform: rotateY(180deg);
+        }
+
+        /* 범용 나이스스크롤바 끝 */
+
+        /* 커스텀 시작 */
+        .nicescroll-box-type-1 {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .nicescroll-box-type-1>div {
+            padding: 10px;
+        }
+
+        .nicescroll-box-type-1-2 {
+            background-color: black;
+            color: white;
+        }
+
+        html.touch-disabled .nicescroll-box-type-1-2.nicescroll-more-box::before,
+        html.touch-disabled .nicescroll-box-type-1-2.nicescroll-more-box::after {
+            width: 50px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+            pointer-events: none;
+        }
+
+        html.touch-enabled .nicescroll-box {
+            overflow: auto;
+        }
+
+        /*
+  html.touch-enabled .nicescroll-box::-webkit-scrollbar-track
+  {
+      background-color: transparent;
+  }
+  
+  html.touch-enabled .nicescroll-box::-webkit-scrollbar
+  {
+      width: 6px;
+    height:6px;
+      background-color: transparent;
+  }
+  
+  html.touch-enabled .nicescroll-box::-webkit-scrollbar-thumb
+  {
+      background-color: transparent;
+  }
+  
+  html.touch-enabled .nicescroll-box:hover::-webkit-scrollbar-track
+  {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      background-color: #F5F5F5;
+  }
+  
+  html.touch-enabled .nicescroll-box:hover::-webkit-scrollbar
+  {
+      background-color: #F5F5F5;
+  }
+  
+  html.touch-enabled .nicescroll-box:hover::-webkit-scrollbar-thumb
+  {
+      background-color: #afafaf;
+  }
+  */
+    </style>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <div class="nicescroll-box nicescroll-box-type-1">
+        <div class="nicescroll">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum enim accusantium suscipit repudiandae et? A
+            vel incidunt enim. Fugiat repudiandae quos ducimus fugit quis distinctio assumenda maxime nostrum quisquam
+            quibusdam.
+        </div>
+    </div>
+
+    <div class="nicescroll-box nicescroll-box-type-1 nicescroll-more-box">
+        <div class="nicescroll">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum enim accusantium suscipit repudiandae et? A
+            vel incidunt enim. Fugiat repudiandae quos ducimus fugit quis distinctio assumenda maxime nostrum quisquam
+            quibusdam.
+        </div>
+    </div>
+
+    <div class="nicescroll-box nicescroll-box-type-1 nicescroll-box-type-1-2">
+        <div class="nicescroll">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum enim accusantium suscipit repudiandae et? A
+            vel incidunt enim. Fugiat repudiandae quos ducimus fugit quis distinctio assumenda maxime nostrum quisquam
+            quibusdam.
+        </div>
+    </div>
+
+    <div class="nicescroll-box nicescroll-box-type-1 nicescroll-box-type-1-2 nicescroll-more-box">
+        <div class="nicescroll">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum enim accusantium suscipit repudiandae et? A
+            vel incidunt enim. Fugiat repudiandae quos ducimus fugit quis distinctio assumenda maxime nostrum quisquam
+            quibusdam.
+        </div>
+    </div>
+
+    <div class="nicescroll-box nicescroll-box-type-1 nicescroll-box-type-1-3 nicescroll-more-box">
+        <div class="nicescroll">
+            <img src="https://picsum.photos/id/201/300/300" alt="">
+            <img src="https://picsum.photos/id/202/300/300" alt="">
+            <img src="https://picsum.photos/id/203/300/300" alt="">
+            <img src="https://picsum.photos/id/204/300/300" alt="">
+            <img src="https://picsum.photos/id/205/300/300" alt="">
+            <img src="https://picsum.photos/id/206/300/300" alt="">
+            <img src="https://picsum.photos/id/207/300/300" alt="">
+            <img src="https://picsum.photos/id/208/300/300" alt="">
+            <img src="https://picsum.photos/id/209/300/300" alt="">
+            <img src="https://picsum.photos/id/210/300/300" alt="">
+            <img src="https://picsum.photos/id/211/300/300" alt="">
+            <img src="https://picsum.photos/id/212/300/300" alt="">
+            <img src="https://picsum.photos/id/213/300/300" alt="">
+            <img src="https://picsum.photos/id/214/300/300" alt="">
+            <img src="https://picsum.photos/id/215/300/300" alt="">
+            <img src="https://picsum.photos/id/216/300/300" alt="">
+            <img src="https://picsum.photos/id/217/300/300" alt="">
+            <img src="https://picsum.photos/id/218/300/300" alt="">
+            <img src="https://picsum.photos/id/219/300/300" alt="">
+            <img src="https://picsum.photos/id/220/300/300" alt="">
+        </div>
+    </div>
+    <script>
+        console.clear();
+
+        // 터치가 가능한 디바이스인지 체크하는 로직 시작
+        function detectTouchEnabled() {
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                return true;
+            }
+
+            return false;
+
+            // 아래 로직은 폐기 한다.
+            // 왜냐하면, PC 브라우저라도 터치가 가능한게 있기 때문에, 단순히 터치가능여부를 모바일인지 아닌지로 구분하면 좋지 않다.
+            /*
+            return ( 'ontouchstart' in window ) || 
+              ( navigator.maxTouchPoints > 0 ) || 
+              ( navigator.msMaxTouchPoints > 0 );
+            */
+        }
+
+        const isTouchEnabled = detectTouchEnabled();
+
+        function Touch__init() {
+            if (isTouchEnabled) {
+                $('html').addClass('touch-enabled');
+            }
+            else {
+                $('html').addClass('touch-disabled');
+            }
+        }
+
+        Touch__init();
+        // 터치가 가능한 디바이스인지 체크하는 로직 끝
+
+        // 범용 나이스스크롤바 적용 시작
+        function Nicescroll__init() {
+            if (isTouchEnabled) {
+                return;
+            }
+
+            $('.nicescroll').each(function (index, el) {
+                const $el = $(el);
+
+                $('.nicescroll').niceScroll();
+            });
+        }
+
+        Nicescroll__init();
+        // 범용 나이스스크롤바 적용 끝
+    </script>
+</body>
+
+</html>
