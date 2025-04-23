@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        */
+
+        .cls_div {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .cls_div>select {
+            padding: 10px;
+            font-size: 1.2rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form action="https://formspree.io/f/myzwgrer" method="POST" onSubmit="sendEmailForm(this); return false;">
+        <label>
+            Your email:
+            <input type="email" name="email" placeholder="여기에 이메일 써">
+        </label>
+        <label>
+            Your message:
+            <textarea name="message"></textarea>
+        </label>
+        <button type="submit">Send</button>
+    </form>
+
+    <br>
+
+    <form action="">
+        <hr>
+        <div>
+            <h1>일반 텍스트</h1>
+            <input readonly type="text" placeholder="플레이스홀더" value="기본값">
+        </div>
+        <hr>
+        <div>
+            <h1>멀티라인 텍스트</h1>
+            <textarea style="resize: horizontal;" rows="10" type="text" placeholder="플레이스홀더">내용</textarea>
+        </div>
+        <hr>
+        <div>
+            <h1>셀렉트박스</h1>
+            <select name="age">
+                <option value="" selected disabled>나이를 선택해주세요.</option>
+                <option value="1">1살</option>
+                <option value="2">2살</option>
+                <option value="3">3살</option>
+            </select>
+        </div>
+        <hr>
+        <div>
+            <h1>체크박스</h1>
+            <label>
+                <span>기혼</span>
+                <input type="checkbox">
+            </label>
+            <label>
+                <span>주택소유</span>
+                <input type="checkbox">
+            </label>
+        </div>
+        <hr>
+        <div>
+            <h1>성별</h1>
+            <label>
+                <span>남자</span>
+                <input name="gender" type="radio" value="M">
+            </label>
+            <label>
+                <span>여자</span>
+                <input name="gender" type="radio" value="W">
+            </label>
+        </div>
+        <hr>
+        <div>
+            <h1>날짜</h1>
+            <input type="date">
+        </div>
+        <hr>
+        <div>
+            <h1>날짜+시각</h1>
+            <input type="datetime-local">
+        </div>
+        <hr>
+        <div>
+            <h1>범위</h1>
+            <input type="range">
+        </div>
+    </form>
+
+    <br>
+
+    <div class="cls_div">
+        <select onchange="window.open(this.value);">
+            <option value="" disabled selected>패밀리 사이트</option>
+            <option value="https://www.naver.com">네이버</option>
+            <option value="https://www.kakaocorp.com">카카오</option>
+            <option value="https://google.com">구글</option>
+        </select>
+    </div>
+
+    <script>
+        function sendEmailForm(form) {
+            if (form.email.value.length == 0) {
+                alert("이메일 주소를 입력해주세요.");
+                form.email.focus();
+                return;
+            }
+
+            if (form.message.value.length == 0) {
+                alert("메세지를 입력해주세요.");
+                form.message.focus();
+                return;
+            }
+
+            form.submit();
+
+            form.email.value = "";
+            form.message.value = "";
+        }
+
+    </script>
+
+</body>
+
+</html>
